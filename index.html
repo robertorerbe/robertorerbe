@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Re bike Experiences | Passionate Cyclist & Explorer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter & Playfair Display per un tocco elegante come il logo -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            forest: '#1E3E2B',     // Verde scuro pino/foresta dal logo
+                            leaf: '#2C5A3F',       // Verde medio
+                            gold: '#5E6F2E',       // Verde oliva / oro vegetale bilanciato per sfondi chiari
+                            goldlight: '#7A8C3B',  // Accento oliva chiaro
+                            dark: '#F3F6F4',       // Sfondo principale CHIARO (Verde salvia desaturato)
+                            card: '#FFFFFF',       // Card bianche pulite ed eleganti
+                            border: '#E2E9E4'      // Bordo coordinato chiaro
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #2C5A3F 0%, #5E6F2E 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-bg {
+            background: linear-gradient(to bottom, rgba(30, 62, 43, 0.85), rgba(15, 33, 22, 0.92)), 
+                        url('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+        }
+        .glass-card {
+            background: rgba(243, 246, 244, 0.90);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(44, 90, 63, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-gray-800 font-sans antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card transition-all duration-300" id="header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 text-xl sm:text-2xl font-black tracking-wider uppercase text-brand-forest font-serif">
+                <i class="fa-solid fa-crown text-brand-gold"></i>
+                <span>RE BIKE <span class="text-brand-gold">EXPERIENCES</span></span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-700">
+                <a href="#about" class="hover:text-brand-forest transition-colors">Chi Sono</a>
+                <a href="#piemont-gravel" class="hover:text-brand-forest transition-colors">Piemont Gravel 2027</a>
+                <a href="#instructor" class="hover:text-brand-forest transition-colors">Scuola MTB</a>
+                <a href="#pillars" class="hover:text-brand-forest transition-colors">Esperienze</a>
+                <a href="#routes" class="hover:text-brand-forest transition-colors">Tour & Percorsi</a>
+                <a href="#gallery" class="hover:text-brand-forest transition-colors">Galleria</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-full bg-gradient-to-r from-brand-forest to-brand-leaf text-white font-semibold hover:shadow-lg hover:shadow-brand-forest/20 hover:scale-105 transition-all">
+                    Prenota un Tour
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-2xl text-gray-700 hover:text-brand-forest focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-card border-b border-brand-border px-6 py-6 flex flex-col gap-4 text-gray-800">
+            <a href="#about" class="mobile-link text-lg font-medium hover:text-brand-forest">Chi Sono</a>
+            <a href="#piemont-gravel" class="mobile-link text-lg font-medium hover:text-brand-forest">Piemont Gravel 2027</a>
+            <a href="#instructor" class="mobile-link text-lg font-medium hover:text-brand-forest">Scuola MTB</a>
+            <a href="#pillars" class="mobile-link text-lg font-medium hover:text-brand-forest">Esperienze</a>
+            <a href="#routes" class="mobile-link text-lg font-medium hover:text-brand-forest">Tour & Percorsi</a>
+            <a href="#gallery" class="mobile-link text-lg font-medium hover:text-brand-forest">Galleria</a>
+            <a href="#contact" class="mobile-link mt-2 text-center py-3 rounded-xl bg-gradient-to-r from-brand-forest to-brand-leaf text-white font-semibold">
+                Prenota un Tour
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative min-h-screen hero-bg flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 flex flex-col items-start gap-6">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur border border-white/20 text-emerald-200 text-sm font-semibold uppercase tracking-widest animate-pulse">
+                <i class="fa-solid fa-flag-checkered text-brand-goldlight"></i> Speciale Aprile 2027: Preparazione PIEMONT Gravel
+            </div>
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white leading-tight max-w-4xl font-serif">
+                Preparati alla <span class="text-emerald-300">PIEMONT Gravel 2027</span> & Scopri il Piemonte su due ruote.
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-200 max-w-2xl font-light">
+                Preparazione atletica completa, supporto sul percorso e consulenza strategica per affrontare al meglio ogni tappa dell'evento e i grandi tour Gravel & MTB.
+            </p>
+            
+            <!-- Pilastri Badge -->
+            <div class="flex flex-wrap items-center gap-6 py-2 text-sm text-gray-200 border-y border-white/20 w-full max-w-2xl">
+                <div class="flex items-center gap-2"><i class="fa-solid fa-leaf text-emerald-400"></i> <span>Natura</span></div>
+                <span class="text-white/40">•</span>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-chess-rook text-emerald-400"></i> <span>Storia</span></div>
+                <span class="text-white/40">•</span>
+                <div class="flex items-center gap-2"><i class="fa-solid fa-wine-glass text-emerald-400"></i> <span>Enogastronomia</span></div>
+            </div>
+
+            <div class="flex flex-wrap gap-4 pt-2">
+                <a href="#piemont-gravel" class="px-8 py-4 rounded-xl bg-gradient-to-r from-brand-leaf to-brand-gold text-white font-bold hover:shadow-xl hover:shadow-brand-gold/20 transition-all flex items-center gap-3">
+                    Programma PIEMONT Gravel <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold border border-white/30 backdrop-blur transition-all">
+                    Richiedi Info Preparazione
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/70 animate-bounce">
+            <i class="fa-solid fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- FEATURED ACTIVIY: PIEMONT GRAVEL 2027 -->
+    <section id="piemont-gravel" class="py-20 bg-brand-dark border-b border-brand-border relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="p-8 sm:p-12 rounded-3xl bg-brand-card border border-brand-border shadow-xl relative">
+                <div class="absolute -top-4 right-8 bg-brand-forest text-white font-black text-xs uppercase px-4 py-1.5 rounded-full tracking-wider shadow-md">
+                    Attività in Evidenza • Aprile 2027
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 flex flex-col gap-6">
+                        <span class="text-brand-forest font-bold uppercase tracking-wider text-sm flex items-center gap-2">
+                            <i class="fa-solid fa-person-biking"></i> Evento Target 2027
+                        </span>
+                        <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 font-serif">
+                            Preparazione <br><span class="gradient-text">PIEMONT GRAVEL</span>
+                        </h2>
+                        <p class="text-gray-600 text-base sm:text-lg leading-relaxed">
+                            Indipendentemente dalla distanza che deciderai di fare, se hai dubbi sulla preparazione o non sai da dove iniziare, se vuoi unirti a un gruppo oppure preferisci fare tutto in solitaria, questo è il posto giusto!
+                        </p>
+
+                        <!-- Key Features Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                            <div class="p-4 rounded-xl bg-brand-dark border border-brand-border flex items-start gap-3">
+                                <i class="fa-solid fa-heart-pulse text-brand-forest text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="text-gray-900 font-bold text-sm">Preparazione Atletica Completa</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Programmazione del carico di lavoro e piano di allenamenti personalizzato in base ai tuoi impegni.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-brand-dark border border-brand-border flex items-start gap-3">
+                                <i class="fa-solid fa-shield-halved text-brand-forest text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="text-gray-900 font-bold text-sm">Supporto Durante il Percorso</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Assistenza sul campo, gestione delle emergenze e guida nei tratti più complessi.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-brand-dark border border-brand-border flex items-start gap-3">
+                                <i class="fa-solid fa-calendar-check text-brand-forest text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="text-gray-900 font-bold text-sm">Gestione Periodo di Allenamento</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Consigli pratici sul recupero e sulla gestione dei mesi che precedono l'evento.</p>
+                                </div>
+                            </div>
+                            <div class="p-4 rounded-xl bg-brand-dark border border-brand-border flex items-start gap-3">
+                                <i class="fa-solid fa-route text-brand-forest text-xl mt-1"></i>
+                                <div>
+                                    <h4 class="text-gray-900 font-bold text-sm">Strategia delle Giornate di Tour</h4>
+                                    <p class="text-gray-600 text-xs mt-1">Pianificazione del ritmo di gara, gestione delle soste, alimentazione e idratazione.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <a href="#contact" class="inline-flex items-center gap-3 px-6 py-3.5 rounded-xl bg-gradient-to-r from-brand-forest to-brand-leaf text-white font-bold hover:shadow-lg transition-all">
+                                Unisciti al Gruppo di Preparazione <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 relative">
+                        <div class="rounded-2xl overflow-hidden border border-brand-border shadow-lg relative">
+                            <img src="https://images.unsplash.com/photo-1532298229144-0ec0c57515c7?auto=format&fit=crop&w=800&q=80" alt="Pinarello Grevil F1 Gravel bike" class="w-full h-80 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-white/95 backdrop-blur border border-brand-border text-center flex flex-col gap-1 shadow-md">
+                                <span class="text-brand-forest text-xs font-bold uppercase tracking-widest block">Count-down Aprile 2027</span>
+                                <span class="text-gray-900 font-serif font-bold text-lg">Inizia subito la tua preparazione!</span>
+                                <div class="mt-1 inline-block px-3 py-1 rounded-full bg-brand-forest text-white font-extrabold text-sm tracking-wide mx-auto">
+                                    A partire da 45€
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHI SONO SECTION -->
+    <section id="about" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Avatar / Photo (Sostituita con mtbneve.jpeg) -->
+                <div class="lg:col-span-5 relative">
+                    <div class="relative z-10 rounded-3xl overflow-hidden border-2 border-brand-border shadow-xl">
+                        <img src="mtbneve.jpeg" alt="Accompagnatore Cicloturistico Gravel e MTB sulla neve" class="w-full h-auto object-cover transform hover:scale-105 transition-all duration-500">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-brand-forest/15 rounded-3xl -z-10 blur-xl"></div>
+                </div>
+
+                <!-- Text Content -->
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <span class="text-brand-forest font-bold uppercase tracking-wider text-sm">La Mia Storia & Filosofia</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 font-serif">Dalla BMX al Gravel: una passione fatta di cura e dettagli.</h2>
+                    
+                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
+                        La mia avventura su due ruote è iniziata da ragazzino in sella a una <strong>BMX</strong>, per poi passare al rigore e alla determinazione del <strong>Triathlon</strong>, al <strong>ciclismo su strada</strong> e alla tecnica della <strong>MTB</strong> come istruttore. Non avendo mai avuto doti atletiche innate eccelse, ho sempre sopperito con lo studio viscerale, la meticolosità e la massima attenzione ai dettagli.
+                    </p>
+
+                    <p class="text-gray-700 text-base sm:text-lg leading-relaxed">
+                        Oggi la mia passione più grande è studiare, tracciare e testare nuovi percorsi in <strong>Gravel e MTB</strong>. Sono un <strong>Accompagnatore Cicloturistico certificato dalla Regione Piemonte</strong> — un titolo ottenuto dopo un impegnativo percorso di formazione di 6 mesi che mi garantisce le competenze tecniche e le abilitazioni professionali necessarie (incluse le relative <strong>coperture assicurative</strong>).
+                    </p>
+
+                    <div class="p-5 rounded-2xl bg-brand-card border border-brand-border shadow-sm flex items-start gap-4">
+                        <i class="fa-solid fa-heart text-brand-forest text-2xl mt-1"></i>
+                        <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                            Accompagnare in bici non è il mio lavoro principale: ed è proprio per questo che desidero dedicare il mio tempo libero al massimo del divertimento, alla cura di ogni dettaglio e al puro piacere di pedalare in ottima compagnia.
+                        </p>
+                    </div>
+
+                    <!-- Garantiamo e Cerchiamo Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                        <div class="p-4 rounded-xl bg-brand-card border border-brand-border shadow-sm">
+                            <div class="text-brand-forest font-bold text-xs uppercase mb-1">Qualifica Ufficiale</div>
+                            <div class="text-gray-900 font-bold text-base">Accompagnatore Cicloturistico Regione Piemonte</div>
+                            <div class="text-gray-600 text-xs mt-1">Risorse del territorio, cartografia, meteorologia, meccanica, pianificazione, alimentazione, pronto soccorso, gestione del gruppo e coperture assicurativa professionali.</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-brand-card border border-brand-border shadow-sm">
+                            <div class="text-brand-forest font-bold text-xs uppercase mb-1">Lo Spirito di Re Bike Experiences</div>
+                            <div class="text-gray-900 font-bold text-base">Divertimento & Condivisione</div>
+                            <div class="text-gray-600 text-xs mt-1">Pedalo per il piacere del viaggio e cerco massima serenità.</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE ISTRUTTORE MTB -->
+    <section id="instructor" class="py-24 bg-white border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-7 flex flex-col gap-6">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-forest/10 text-brand-forest text-xs font-bold uppercase tracking-widest w-fit">
+                        <i class="fa-solid fa-certificate"></i> Scuola & Formazione MTB
+                    </div>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 font-serif">
+                        Istruttore Mountain Bike <br><span class="gradient-text">per tutte le età</span>
+                    </h2>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Con un'esperienza pluriennale nella didattica e nella guida su campo, offro corsi e sessioni di perfezionamento tecnico adatti a ogni livello, dal principiante al ciclista esperto.
+                    </p>
+                    
+                    <!-- Specializzazione Giovanile Card -->
+                    <div class="p-6 rounded-2xl bg-brand-dark border border-brand-border relative overflow-hidden">
+                        <div class="absolute -right-8 -bottom-8 text-brand-forest/10 text-9xl">
+                            <i class="fa-solid fa-child-reaching"></i>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="flex items-center gap-3 text-brand-forest font-bold text-lg mb-2">
+                                <i class="fa-solid fa-award text-2xl"></i> Specializzazione Giovanile (6 - 14 anni)
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed">
+                                Percorsi educativi e divertenti studiati su misura per ragazzi e bambini. Attraverso il gioco e la pratica in sicurezza, insegniamo l'equilibrio, il controllo del mezzo, l'orientamento e il rispetto per l'ambiente naturale.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Modalità e Territory Details -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                        <div class="p-4 rounded-xl bg-brand-dark border border-brand-border flex items-start gap-3">
+                            <i class="fa-solid fa-users text-brand-forest text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="text-gray-900 font-bold">Gruppo o One-to-One</h4>
+                                <p class="text-gray-600 text-xs mt-1">Sessioni individuali personalizzate o lezioni di gruppo per condividere l'esperienza.</p>
+                            </div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-brand-dark border border-brand-border flex items-start gap-3">
+                            <i class="fa-solid fa-mountain-sun text-brand-forest text-2xl mt-1"></i>
+                            <div>
+                                <h4 class="text-gray-900 font-bold">Territorio Operativo</h4>
+                                <p class="text-gray-600 text-xs mt-1">Alta Val di Susa & Area Torinese (Trail dedicati, bike park e sentieri alpini).</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5 relative">
+                    <div class="relative z-10 rounded-3xl overflow-hidden border border-brand-border shadow-xl">
+                        <!-- Foto di una Specialized Turbo Levo rossa in azione su trail montano -->
+                        <img src="https://revolutionmtb.com.au/wp-content/uploads/2018/09/D812903.jpg" alt="Specialized Turbo Levo rossa su trail alpino" class="w-full h-80 object-cover">
+                    </div>
+                    <div class="mt-6 p-6 rounded-2xl bg-brand-dark border border-brand-border text-center flex flex-col gap-2 shadow-sm">
+                        <span class="text-gray-600 text-xs uppercase tracking-wider block font-semibold">Vuoi prenotare una lezione?</span>
+                        <div class="inline-block px-3 py-1 rounded-full bg-brand-forest text-white font-extrabold text-sm tracking-wide mx-auto">
+                            A partire da 20€
+                        </div>
+                        <a href="#contact" class="inline-flex items-center justify-center gap-2 text-brand-forest font-bold hover:underline mt-1">
+                            Richiedi disponibilità in Val di Susa o Torino <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PILASTRI EXPERIENCES SECTION -->
+    <section id="pillars" class="py-20 bg-brand-dark border-y border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-forest font-bold uppercase tracking-wider text-sm">I Nostri Valori</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 font-serif mt-1">L'Essenza del Viaggio</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl bg-brand-card border border-brand-border shadow-sm flex flex-col gap-4 text-center hover:border-brand-forest transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-forest/10 text-brand-forest flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 font-serif">Natura</h3>
+                    <p class="text-gray-600 text-sm">Itinerari immersi nella vegetazione incontaminata del Piemonte, tra parchi naturali, fiumi e rilievi collinari.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-brand-card border border-brand-border shadow-sm flex flex-col gap-4 text-center hover:border-brand-forest transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-forest/10 text-brand-forest flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-chess-rook"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 font-serif">Storia</h3>
+                    <p class="text-gray-600 text-sm">Passaggio tra antichi borghi, residenze reali, castelli medievali e strade storiche ricche di fascino.</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-brand-card border border-brand-border shadow-sm flex flex-col gap-4 text-center hover:border-brand-forest transition-all">
+                    <div class="w-16 h-16 rounded-2xl bg-brand-forest/10 text-brand-forest flex items-center justify-center text-3xl mx-auto">
+                        <i class="fa-solid fa-wine-glass"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 font-serif">Enogastronomia</h3>
+                    <p class="text-gray-600 text-sm">Soste presso cantine d'eccellenza, agriturismi e produttori locali per degustare grandi vini e prodotti tipici.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATISTICHE SECTION -->
+    <section id="stats" class="py-16 bg-white border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto">
+                <div class="p-8 rounded-2xl bg-brand-dark border border-brand-border shadow-sm">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-forest font-serif">
+                        Oltre <span data-target="1700">0</span>
+                    </div>
+                    <div class="text-xs sm:text-sm text-gray-600 mt-2 uppercase font-bold">Tour Completati</div>
+                </div>
+                <div class="p-8 rounded-2xl bg-brand-dark border border-brand-border shadow-sm">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-forest font-serif">
+                        Oltre <span data-target="1000">0</span>
+                    </div>
+                    <div class="text-xs sm:text-sm text-gray-600 mt-2 uppercase font-bold">Allievi Formati</div>
+                </div>
+                <div class="p-8 rounded-2xl bg-brand-dark border border-brand-border shadow-sm">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-brand-forest font-serif">
+                        <span data-target="100">0</span>%
+                    </div>
+                    <div class="text-xs sm:text-sm text-gray-600 mt-2 uppercase font-bold">Passione</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PERCORSI SECTION -->
+    <section id="routes" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-brand-forest font-bold uppercase tracking-wider text-sm">Esperienze Guidate</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 font-serif mt-1">Tour & Percorsi Consigliati</h2>
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap gap-2">
+                    <button class="filter-btn active px-4 py-2 rounded-xl bg-brand-forest text-white font-semibold text-sm transition-all" data-filter="all">Tutti</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl bg-brand-card text-gray-700 border border-brand-border font-semibold text-sm transition-all" data-filter="gravel">Gravel</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl bg-brand-card text-gray-700 border border-brand-border font-semibold text-sm transition-all" data-filter="mtb">MTB</button>
+                    <button class="filter-btn px-4 py-2 rounded-xl bg-brand-card text-gray-700 border border-brand-border font-semibold text-sm transition-all" data-filter="road">Alpini & Forti</button>
+                </div>
+            </div>
+
+            <!-- Routes Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="routes-grid">
+                
+                <!-- Card 1: Strada Dell'Assietta -->
+                <div class="route-card rounded-2xl overflow-hidden bg-brand-card border border-brand-border shadow-sm hover:shadow-lg transition-all duration-300 group" data-category="road">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80" alt="Panorama Strada dell'Assietta tra Val di Susa e Val Chisone" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-forest text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Alpi & Passi</span>
+                    </div>
+                    <div class="p-6 flex flex-col gap-4">
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-brand-forest transition-colors font-serif">Strada Dell'Assietta e Fortificazioni Militari</h3>
+                        <p class="text-gray-600 text-sm line-clamp-2">Percorso in quota a oltre 2000 metri su strade militari sterrate tra panorami spettacolari di crinale.</p>
+                        
+                        <div class="grid grid-cols-2 gap-2 py-3 border-y border-brand-border text-center text-xs">
+                            <div>
+                                <span class="text-gray-500 block">Distanza</span>
+                                <strong class="text-gray-900 text-sm">64 km</strong>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block">Dislivello</span>
+                                <strong class="text-gray-900 text-sm font-semibold">1,900 m+</strong>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-xs text-gray-600 pt-1">
+                            <span><i class="fa-solid fa-location-dot text-brand-forest mr-1"></i> Val Chisone, Piemonte</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Tour Langhe e Monferrato -->
+                <div class="route-card rounded-2xl overflow-hidden bg-brand-card border border-brand-border shadow-sm hover:shadow-lg transition-all duration-300 group" data-category="gravel">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="gravel.jpg" alt="Bici Gravel davanti al Castello di Grinzane Cavour" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-brand-leaf text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Gravel</span>
+                    </div>
+                    <div class="p-6 flex flex-col gap-4">
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-brand-forest transition-colors font-serif">Tour Langhe e Monferrato</h3>
+                        <p class="text-gray-600 text-sm line-clamp-2">Polvere, colline e paesaggi mozzafiato. L'essenza del gravel attraverso le colline Patrimonio Unesco.</p>
+                        
+                        <div class="grid grid-cols-2 gap-2 py-3 border-y border-brand-border text-center text-xs">
+                            <div>
+                                <span class="text-gray-500 block">Distanza</span>
+                                <strong class="text-gray-900 text-sm">A partire da 40km</strong>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block">Dislivello</span>
+                                <strong class="text-gray-900 text-sm">A partire da 700mt d+</strong>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-xs text-gray-600 pt-1">
+                            <span><i class="fa-solid fa-location-dot text-brand-forest mr-1"></i> Monferrato / Langhe</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: MTB -->
+                <div class="route-card rounded-2xl overflow-hidden bg-brand-card border border-brand-border shadow-sm hover:shadow-lg transition-all duration-300 group" data-category="mtb">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80" alt="Sentiero singletrail immerso in un rigoglioso bosco di conifere" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 left-4 bg-emerald-700 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">MTB</span>
+                    </div>
+                    <div class="p-6 flex flex-col gap-4">
+                        <h3 class="text-2xl font-bold text-gray-900 group-hover:text-brand-forest transition-colors font-serif">Singletrack Alta Val di Susa</h3>
+                        <p class="text-gray-600 text-sm line-clamp-2">Singletrack nei boschi di conifere, discese mozzafiato fino a 2500mt di quota.</p>
+                        
+                        <div class="grid grid-cols-3 gap-2 py-3 border-y border-brand-border text-center text-xs">
+                            <div>
+                                <span class="text-gray-500 block">Distanza</span>
+                                <strong class="text-gray-900 text-sm">A partire da 30km</strong>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block">Dislivello</span>
+                                <strong class="text-gray-900 text-sm">A partire da 700mt d+</strong>
+                            </div>
+                            <div>
+                                <span class="text-gray-500 block">Tecnica</span>
+                                <strong class="text-gray-900 text-sm">Intermedia</strong>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center justify-between text-xs text-gray-600 pt-1">
+                            <span><i class="fa-solid fa-location-dot text-brand-forest mr-1"></i> Alta Val Susa, Piemonte</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERIA FOTOGRAFICA -->
+    <section id="gallery" class="py-24 bg-white border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-brand-forest font-bold uppercase tracking-wider text-sm">Momenti Catturati</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 mt-1 font-serif">Scatti dal Cammino</h2>
+                <p class="text-gray-600 mt-4">Alcuni dei ricordi più belli raccolti durante i miei viaggi in bicicletta.</p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-64 border border-brand-border shadow-sm" onclick="openLightbox('https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=1200&q=80', 'Gravel bike su sterrato panoramico')">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=600&q=80" alt="Gravel bike" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-medium text-sm">Gravel bike in quota</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-64 border border-brand-border shadow-sm" onclick="openLightbox('https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=1200&q=80', 'Discesa MTB su singletrack')">
+                    <img src="https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?auto=format&fit=crop&w=600&q=80" alt="Discesa MTB" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-medium text-sm">Singletrack in MTB</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-64 border border-brand-border shadow-sm" onclick="openLightbox('https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=1200&q=80', 'Mountain Bike tra le montagne')">
+                    <img src="https://images.unsplash.com/photo-1511994298241-608e28f14fde?auto=format&fit=crop&w=600&q=80" alt="Mountain Bike nel bosco" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-medium text-sm">Escursione nei boschi</span>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl group cursor-pointer h-64 border border-brand-border shadow-sm" onclick="openLightbox('https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=1200&q=80', 'Gravel bike e vista panoramica')">
+                    <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?auto=format&fit=crop&w=600&q=80" alt="Gravel rider" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <span class="text-white font-medium text-sm">Gravel & Panorama</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 backdrop-blur-md">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-3xl hover:text-emerald-400">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="max-w-4xl w-full flex flex-col items-center gap-4">
+            <img id="lightbox-img" src="" alt="Enlarged Image" class="max-h-[80vh] w-auto rounded-xl object-contain">
+            <p id="lightbox-caption" class="text-gray-300 font-medium text-lg"></p>
+        </div>
+    </div>
+
+    <!-- CONTATTI SECTION -->
+    <section id="contact" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Info Column -->
+                <div class="lg:col-span-5 flex flex-col gap-6">
+                    <span class="text-brand-forest font-bold uppercase tracking-wider text-sm">Mettersi in Contatto</span>
+                    <h2 class="text-3xl sm:text-5xl font-extrabold text-gray-900 font-serif">Pedaliamo Insieme?</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Sei interessato a unirti al gruppo di preparazione per la Piemont Gravel 2027, richiedere una lezione di MTB per te o i tuoi ragazzi, o organizzare un tour su misura? Inviami un'email!
+                    </p>
+
+                    <div class="flex flex-col gap-4 mt-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-card border border-brand-border shadow-sm flex items-center justify-center text-brand-forest text-xl">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 uppercase font-semibold">Email</div>
+                                <a href="mailto:robertore.rbe@gmail.com?subject=Richiesta%20informazioni" class="text-gray-900 font-medium hover:text-brand-forest transition-colors">robertore.rbe@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-card border border-brand-border shadow-sm flex items-center justify-center text-brand-forest text-xl">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-gray-500 uppercase font-semibold">Base Operativa</div>
+                                <div class="text-gray-900 font-medium">Torino & Val di Susa, Piemonte</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Networks (Instagram & Komoot) -->
+                    <div class="flex gap-4 mt-6">
+                        <a href="https://www.instagram.com/robyre" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-card border border-brand-border shadow-sm flex items-center justify-center text-gray-600 hover:text-brand-forest transition-all" title="Instagram @robyre">
+                            <i class="fa-brands fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://www.komoot.com/it-it/user/1412072695307" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-brand-card border border-brand-border shadow-sm flex items-center justify-center text-gray-600 hover:text-brand-forest transition-all" title="Profilo Komoot">
+                            <i class="fa-solid fa-map-location-dot text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Email Direct Link Column -->
+                <div class="lg:col-span-7">
+                    <div class="bg-brand-card border border-brand-border p-8 sm:p-12 rounded-3xl flex flex-col items-center text-center gap-6 shadow-lg relative overflow-hidden">
+                        <div class="w-20 h-20 rounded-full bg-brand-forest/10 text-brand-forest flex items-center justify-center text-4xl border border-brand-border">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </div>
+                        
+                        <div class="flex flex-col gap-2">
+                            <h3 class="text-2xl sm:text-3xl font-bold text-gray-900 font-serif">Invia una Richiesta Diretta</h3>
+                            <p class="text-gray-600 text-sm sm:text-base max-w-md mx-auto leading-relaxed">
+                                Clicca qui sotto per inviare un'email direttamente dalla tua applicazione di posta predefinita.
+                            </p>
+                        </div>
+
+                        <a href="mailto:robertore.rbe@gmail.com?subject=Richiesta%20informazioni" class="w-full sm:w-auto px-10 py-5 rounded-2xl bg-gradient-to-r from-brand-forest to-brand-leaf text-white font-bold text-lg hover:shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-envelope-open-text"></i>
+                            <span>Invia Email a robertore.rbe@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white py-8 border-t border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-gray-500 text-sm">© 2026 Re bike Experiences. Tutti i diritti riservati.</p>
+            <p class="text-gray-500 text-sm flex items-center gap-1">
+                Fatto con <i class="fa-solid fa-heart text-brand-forest"></i> per il Ciclismo
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+
+        // Filter Route Cards
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const routeCards = document.querySelectorAll('.route-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-forest', 'text-white');
+                    b.classList.add('bg-brand-card', 'text-gray-700');
+                });
+                btn.classList.remove('bg-brand-card', 'text-gray-700');
+                btn.classList.add('bg-brand-forest', 'text-white');
+
+                const filter = btn.getAttribute('data-filter');
+
+                routeCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Lightbox Functions
+        function openLightbox(src, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            const cap = document.getElementById('lightbox-caption');
+
+            img.src = src;
+            cap.innerText = caption;
+            lightbox.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+
+        // Animated Counters
+        const statsSection = document.getElementById('stats');
+        const counters = document.querySelectorAll('[data-target]');
+        let animated = false;
+
+        window.addEventListener('scroll', () => {
+            if(!statsSection) return;
+            const rect = statsSection.getBoundingClientRect();
+            if (rect.top <= window.innerHeight && !animated) {
+                animated = true;
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000;
+                    const stepTime = 20;
+                    const steps = duration / stepTime;
+                    const increment = target / steps;
+                    let current = 0;
+
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            counter.innerText = target.toLocaleString('it-IT');
+                            clearInterval(timer);
+                        } else {
+                            counter.innerText = Math.ceil(current).toLocaleString('it-IT');
+                        }
+                    }, stepTime);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
